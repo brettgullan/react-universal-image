@@ -1,0 +1,37 @@
+{
+  "name": "universal-image",
+  "version": "0.0.1",
+  "description": "A modern, responsive image component with support for LQIP, SQIP and lazy loading.",
+  "main": "index.js",
+  "scripts": {
+    "start": "neutrino start",
+    "build": "neutrino build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "react",
+    "responsive",
+    "image",
+    "picture",
+    "lazy",
+    "lqip",
+    "sqip"
+  ],
+  "author": "Brett Gullan",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@neutrinojs/react-components": "^8.3.0",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "babel-loader": "^8.0.6",
+    "neutrino": "^8.3.0"
+  }
+}
