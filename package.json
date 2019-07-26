@@ -21,14 +21,25 @@
   "author": "Brett Gullan",
   "license": "MIT",
   "dependencies": {
+    "@rebass/components": "^4.0.0-1",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
+    "ramda-adjunct": "^2.18.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^5.0.0-beta.8",
+    "styled-system": "^5.0.16"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@neutrinojs/react-components": "^8.3.0",
     "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-backgrounds": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-notes": "^5.1.9",
+    "@storybook/addon-options": "^5.1.9",
+    "@storybook/addon-viewport": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "babel-loader": "^8.0.6",
