@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
+import cx from 'classnames'
+import { css } from 'styled-components'
 
 // ----------------------------------------------------------------------------
 
-import { Img } from './styled'
+import { Img, blockImage, blurUp, fitImage } from './styled'
 
 // ----------------------------------------------------------------------------
 
@@ -18,11 +20,23 @@ if (canUseDOM) {
   lazySizes = require('lazysizes')
 }
 
+let LAZY_CLASS = 'lazyload'
+
 // ----------------------------------------------------------------------------
 
-export class LazyImage extends Component {
+export class LazyImage extends PureComponent {
   render() {
-    return <Img {...this.props} />
+    const { src } = this.props
+    const props = {
+      src: this.props.placeholder,
+      'data-src': this.props.src,
+      'data-srcset': this.props.srcSet,
+      'data-sizes': 'auto',
+    }
+    if (this.props.placeholder) {
+      props.css = css`${fitImage}${blurUp}`
+    }
+    return <Img {...props} className={cx(LAZY_CLASS)} />
   }
 }
 

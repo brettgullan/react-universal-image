@@ -38,7 +38,7 @@ export const Img = system({
 // ----------------------------------------------------------------------------
 
 export const fitImage = css`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -53,14 +53,6 @@ export const blockImage = css`
   width: auto;
   max-width: none;
   height: 100%;
-`
-
-export const blurUp = css`
-  filter: blur(5px);
-  transition: filter 250ms;
-  &.lazyloaded {
-    filter: blur(0);
-  }
 `
 
 export const filteredImage = css`
