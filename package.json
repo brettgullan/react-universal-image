@@ -4,7 +4,7 @@
   "description": "A modern, responsive image component, in React, with support for LQIP and lazy loading.",
   "main": "index.js",
   "files": [
-    "./build/*"
+    "/build"
   ],
   "scripts": {
     "start": "neutrino start",
