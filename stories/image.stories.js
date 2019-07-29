@@ -3,26 +3,12 @@ import { storiesOf } from '@storybook/react'
 
 //-----------------------------------------------------------------------------
 
-import Image from '../src/components/Image'
 import Picture from '../src/components/Picture'
 import LazyImage from '../src/components/LazyImage'
 import LazyPicture from '../src/components/LazyPicture'
 
 import { Box } from '../src/theme/styled'
 import { fitImage } from '../src/components/LazyImage/styled'
-
-//-----------------------------------------------------------------------------
-
-storiesOf('Image', module)
-  .add('basic', () => <Image src="https://picsum.photos/640/360" />)
-  .add('responsive', () => (
-    <Image
-      src="https://picsum.photos/id/128/640/360"
-      srcSet={
-        'https://picsum.photos/id/128/240/135 240w, https://picsum.photos/id/128/320/180 320w, https://picsum.photos/id/128/640/360 640w, https://picsum.photos/id/128/1280/720 12800w'
-      }
-    />
-  ))
 
 //-----------------------------------------------------------------------------
 
