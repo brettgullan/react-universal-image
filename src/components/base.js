@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { space, layout, position } from 'styled-system'
+import { border, layout, position, space } from 'styled-system'
 
 // ----------------------------------------------------------------------------
 
@@ -11,6 +11,7 @@ export const Img = styled.img(
   space,
   layout,
   position,
+  border,
 )
 
 // ----------------------------------------------------------------------------
