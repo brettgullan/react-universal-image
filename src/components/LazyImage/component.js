@@ -50,7 +50,8 @@ export class LazyImage extends PureComponent {
         'data-srcset': srcSet,
         'data-sizes': sizes,
         className: cx(className, LAZY_CLASS),
-        css: placeholder ? css`${cssObj}${blurUp}` : cssObj,
+        // css: placeholder ? css`${cssObj}${blurUp}` : cssObj,
+        // css: blurUp,
       }
     } else {
       props = {
@@ -61,7 +62,9 @@ export class LazyImage extends PureComponent {
       }
     }
     Object.assign(props, rest)
-    return <Img {...props} />
+    return (
+      <Img {...props} css={placeholder ? css`${cssObj}${blurUp}` : cssObj} />
+    )
   }
 }
 
