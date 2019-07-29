@@ -62,6 +62,10 @@ export class Image extends PureComponent {
       }
     }
     Object.assign(props, rest)
+
+    /* The 'CSS prop' requires Babel styled-components plugin to transpile.
+     * It must be set directly on component for plugin to work!
+     */
     return (
       <Img {...props} css={placeholder ? css`${cssObj}${blurUp}` : cssObj} />
     )
