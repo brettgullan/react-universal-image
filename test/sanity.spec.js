@@ -4,6 +4,6 @@ describe('sanity', () => {
   })
 
   it('should also be sane', () => {
-    expect(true).not.toBe(true)
+    expect(true).not.toBe(false)
   })
 })
