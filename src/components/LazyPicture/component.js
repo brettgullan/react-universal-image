@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 // ----------------------------------------------------------------------------
 
 import LazyImage from '../LazyImage'
+import { Picture } from '../base'
 
 // ----------------------------------------------------------------------------
 
@@ -24,11 +25,11 @@ export class LazyPicture extends PureComponent {
     const { sources, ...props } = this.props
 
     return sources ? (
-      <picture>
+      <Picture>
         {/* Note: deliberately omitting the old IE 9 video tags here. */}
         {renderSources(sources, this.props.lazy)}
         <LazyImage {...props} sizes={null} />
-      </picture>
+      </Picture>
     ) : (
       <LazyImage {...props} />
     )

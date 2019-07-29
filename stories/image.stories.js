@@ -70,6 +70,9 @@ storiesOf('Picture', module).add('basic', () => (
 
 storiesOf('LazyImage', module)
   .add('image', () => <LazyImage src="https://picsum.photos/id/128/640/360" />)
+  .add('image width:auto', () => (
+    <LazyImage src="https://picsum.photos/id/128/640/360" width={'auto'} />
+  ))
   .add('responsive', () => (
     <LazyImage src="https://picsum.photos/id/128/640/360" srcSet={srcset} />
   ))

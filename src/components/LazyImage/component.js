@@ -5,7 +5,8 @@ import { css } from 'styled-components'
 
 // ----------------------------------------------------------------------------
 
-import { Img, blockImage, blurUp, fitImage } from './styled'
+import { Img } from '../base'
+import { blurUp } from './styled'
 
 // ----------------------------------------------------------------------------
 

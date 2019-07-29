@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 
 // ----------------------------------------------------------------------------
 
-import { Img } from './styled'
+import { Img, Picture as PictureElement } from '../base'
 
 // ----------------------------------------------------------------------------
 
@@ -30,10 +30,10 @@ export class Picture extends PureComponent {
     const { alt, src } = this.props
     const props = { alt, src }
     return (
-      <picture>
+      <PictureElement>
         {this.renderSources()}
         <Img {...props} />
-      </picture>
+      </PictureElement>
     )
   }
 }

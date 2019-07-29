@@ -1,5 +1,5 @@
-import system from '@rebass/components'
 import styled from 'styled-components'
+import system from '@rebass/components'
 
 import { path } from 'ramda'
 
