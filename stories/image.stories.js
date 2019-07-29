@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react'
 
 //-----------------------------------------------------------------------------
 
-import Picture from '../src/components/Picture'
 import Image from '../src/components/Image'
 import LazyPicture from '../src/components/LazyPicture'
 
@@ -45,12 +44,6 @@ const sources = [
     media: '(min-width: 768px)',
   },
 ]
-
-//-----------------------------------------------------------------------------
-
-storiesOf('Picture', module).add('basic', () => (
-  <Picture src="https://picsum.photos/320/180" sources={sources} />
-))
 
 //-----------------------------------------------------------------------------
 
