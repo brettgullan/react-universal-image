@@ -28,7 +28,7 @@ let LAZY_CLASS = 'lazyload'
 
 // ----------------------------------------------------------------------------
 
-export class LazyImage extends PureComponent {
+export class Image extends PureComponent {
   render() {
     const {
       src,
@@ -70,13 +70,13 @@ export class LazyImage extends PureComponent {
 
 // ----------------------------------------------------------------------------
 
-LazyImage.defaultProps = {
+Image.defaultProps = {
   lazy: false,
   className: null,
   sizes: 'auto',
 }
 
-LazyImage.propTypes = {
+Image.propTypes = {
   src: PropTypes.string,
   srcSet: PropTypes.string,
   sizes: PropTypes.string,
@@ -87,4 +87,4 @@ LazyImage.propTypes = {
 
 // ----------------------------------------------------------------------------
 
-export default LazyImage
+export default Image
