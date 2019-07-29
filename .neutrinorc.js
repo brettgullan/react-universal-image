@@ -1,6 +1,7 @@
 module.exports = {
   use: [
     '@neutrinojs/react-components',
+    '@neutrinojs/jest',
     (neutrino) => {
       neutrino.config.module
         .rule('compile')
@@ -11,7 +12,6 @@ module.exports = {
             {},
           ]
           options.plugins.push(babelStyledComponentsPlugin)
-          console.log(options)
           return options
         })
     },
