@@ -1,61 +1,36 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
-import { renameKeys } from 'ramda-adjunct'
 
 // ----------------------------------------------------------------------------
 
-import { Img } from './styled'
+import LazyImage from '../LazyImage'
 
 // ----------------------------------------------------------------------------
 
-const canUseDOM = !!(
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement
-)
+const renderSources = (sources, lazy) =>
+  sources.map((source, index) => {
+    const { srcSet, ...rest } = source
+    if (srcSet == null) return null
 
-// ----------------------------------------------------------------------------
+    const props = lazy ? Object.assign(rest, { 'data-srcset': srcSet }) : source
 
-let LAZY_CLASS = 'lazyload'
-
-// ----------------------------------------------------------------------------
-
-const renderSources = (sources, lazy) => {
-  if (sources == null) return null
-
-  return sources.map((source, index) => {
-    if (source.srcSet == null) return null
-    let props = source
-    if (lazy) {
-      props = renameKeys({ srcSet: 'data-srcset' }, source)
-    }
     return <source key={`sources-${index}`} {...props} />
   })
-}
 
 // ----------------------------------------------------------------------------
 
 export class LazyPicture extends PureComponent {
-  componentDidMount() {
-    if (canUseDOM && this.props.lazy) {
-      console.log('Initializing lazysizes ...')
-      lazySizes = lazySizes || require('lazysizes')
-    } else {
-      console.log('Eagerly loading images ...')
-    }
-  }
-
   render() {
-    const { sources, placeholder, lazy, ...props } = this.props
-    if (lazy) {
-      props.className = cx(LAZY_CLASS)
-    }
-    return (
+    const { sources, ...props } = this.props
+
+    return sources ? (
       <picture>
-        {renderSources(sources, lazy)}
-        <Img {...props} />
+        {/* Note: deliberately omitting the old IE 9 video tags here. */}
+        {renderSources(sources, this.props.lazy)}
+        <LazyImage {...props} sizes={null} />
       </picture>
+    ) : (
+      <LazyImage {...props} />
     )
   }
 }
@@ -64,6 +39,7 @@ export class LazyPicture extends PureComponent {
 
 LazyPicture.defaultProps = {
   lazy: false,
+  className: null,
 }
 
 LazyPicture.propTypes = {
@@ -75,11 +51,10 @@ LazyPicture.propTypes = {
     }),
   ),
   src: PropTypes.string,
-  alt: PropTypes.string,
-  className: PropTypes.string,
-  sizes: PropTypes.string,
+  srcSet: PropTypes.string,
   placeholder: PropTypes.string,
   lazy: PropTypes.bool,
+  className: PropTypes.string,
 }
 
 // ----------------------------------------------------------------------------
