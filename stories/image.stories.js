@@ -4,11 +4,11 @@ import { storiesOf } from '@storybook/react'
 //-----------------------------------------------------------------------------
 
 import Picture from '../src/components/Picture'
-import LazyImage from '../src/components/LazyImage'
+import Image from '../src/components/Image'
 import LazyPicture from '../src/components/LazyPicture'
 
 import { Box } from '../src/theme/styled'
-import { fitImage } from '../src/components/LazyImage/styled'
+import { fitImage } from '../src/components/Image/styled'
 
 //-----------------------------------------------------------------------------
 
@@ -54,33 +54,33 @@ storiesOf('Picture', module).add('basic', () => (
 
 //-----------------------------------------------------------------------------
 
-storiesOf('LazyImage', module)
-  .add('image', () => <LazyImage src="https://picsum.photos/id/128/640/360" />)
+storiesOf('Image', module)
+  .add('image', () => <Image src="https://picsum.photos/id/128/640/360" />)
   .add('image width:auto', () => (
-    <LazyImage src="https://picsum.photos/id/128/640/360" width={'auto'} />
+    <Image src="https://picsum.photos/id/128/640/360" width={'auto'} />
   ))
   .add('responsive', () => (
-    <LazyImage src="https://picsum.photos/id/128/640/360" srcSet={srcset} />
+    <Image src="https://picsum.photos/id/128/640/360" srcSet={srcset} />
   ))
   .add('lazy image', () => (
-    <LazyImage src="https://picsum.photos/id/128/640/360" lazy={true} />
+    <Image src="https://picsum.photos/id/128/640/360" lazy={true} />
   ))
   .add('lazy image with LQIP', () => (
-    <LazyImage
+    <Image
       src="https://picsum.photos/id/128/640/360"
       lazy={true}
       placeholder="https://picsum.photos/id/128/32/18"
     />
   ))
   .add('lazy responsive', () => (
-    <LazyImage
+    <Image
       src="https://picsum.photos/id/128/640/360"
       srcSet={srcset}
       lazy={true}
     />
   ))
   .add('lazy responsive with LQIP', () => (
-    <LazyImage
+    <Image
       src="https://picsum.photos/id/128/640/360"
       srcSet={srcset}
       lazy={true}
@@ -88,8 +88,8 @@ storiesOf('LazyImage', module)
     />
   ))
   .add('lazy responsive lqip block', () => (
-    <Box width={1} height={400} position={'relative'}>
-      <LazyImage
+    <Box width={1} height={400} position={'relative'} overflow={'hidden'}>
+      <Image
         src="https://picsum.photos/id/128/640/360"
         srcSet={srcset}
         lazy={true}
