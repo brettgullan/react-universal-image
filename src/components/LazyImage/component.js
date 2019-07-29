@@ -45,6 +45,7 @@ export class LazyImage extends PureComponent {
 
     if (lazy) {
       props = {
+        src: placeholder,
         'data-src': src,
         'data-srcset': srcSet,
         'data-sizes': sizes,
