@@ -1,5 +1,26 @@
 import styled, { css } from 'styled-components'
-import { border, layout, position, space } from 'styled-system'
+import {
+  compose,
+  background,
+  border,
+  color,
+  layout,
+  position,
+  space,
+} from 'styled-system'
+
+// ----------------------------------------------------------------------------
+
+export const Box = styled.div(
+  compose(
+    space,
+    layout,
+    position,
+    color,
+    background,
+    border,
+  ),
+)
 
 // ----------------------------------------------------------------------------
 
