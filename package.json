@@ -1,8 +1,11 @@
 {
-  "name": "universal-image",
+  "name": "universal-pictures",
   "version": "0.0.1",
-  "description": "A modern, responsive image component with support for LQIP, SQIP and lazy loading.",
+  "description": "A modern, responsive image component, in React, with support for LQIP and lazy loading.",
   "main": "index.js",
+  "files": [
+    "./build/*"
+  ],
   "scripts": {
     "start": "neutrino start",
     "build": "neutrino build",
@@ -26,7 +29,9 @@
     "lazysizes": "^5.1.0",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
-    "ramda-adjunct": "^2.18.0",
+    "ramda-adjunct": "^2.18.0"
+  },
+  "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^5.0.0-beta.8",
@@ -44,6 +49,7 @@
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "babel-loader": "^8.0.6",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "neutrino": "^8.3.0"
   }
 }
