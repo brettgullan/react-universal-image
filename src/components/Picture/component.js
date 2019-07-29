@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 // ----------------------------------------------------------------------------
 
 import Image from '../Image'
-import { Picture } from '../base'
+import { Picture as PictureElement } from '../base'
 
 // ----------------------------------------------------------------------------
 
@@ -20,16 +20,16 @@ const renderSources = (sources, lazy) =>
 
 // ----------------------------------------------------------------------------
 
-export class LazyPicture extends PureComponent {
+export class Picture extends PureComponent {
   render() {
     const { sources, ...props } = this.props
 
     return sources ? (
-      <Picture>
+      <PictureElement>
         {/* Note: deliberately omitting the old IE 9 video tags here. */}
         {renderSources(sources, this.props.lazy)}
         <Image {...props} sizes={null} />
-      </Picture>
+      </PictureElement>
     ) : (
       <Image {...props} />
     )
@@ -38,12 +38,12 @@ export class LazyPicture extends PureComponent {
 
 // ----------------------------------------------------------------------------
 
-LazyPicture.defaultProps = {
+Picture.defaultProps = {
   lazy: false,
   className: null,
 }
 
-LazyPicture.propTypes = {
+Picture.propTypes = {
   sources: PropTypes.arrayOf(
     PropTypes.shape({
       srcSet: PropTypes.string.isRequired,
@@ -60,4 +60,4 @@ LazyPicture.propTypes = {
 
 // ----------------------------------------------------------------------------
 
-export default LazyPicture
+export default Picture

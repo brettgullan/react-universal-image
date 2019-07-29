@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 //-----------------------------------------------------------------------------
 
 import Image from '../src/components/Image'
-import LazyPicture from '../src/components/LazyPicture'
+import Picture from '../src/components/Picture'
 
 import { Box } from '../src/theme/styled'
 import { fitImage } from '../src/components/Image/styled'
@@ -102,32 +102,32 @@ storiesOf('Image', module)
 
 //-----------------------------------------------------------------------------
 
-storiesOf('LazyPicture', module)
+storiesOf('Picture', module)
   .add('simple image', () => (
-    <LazyPicture src="https://picsum.photos/id/128/720/405" />
+    <Picture src="https://picsum.photos/id/128/720/405" />
   ))
   .add('lazy image', () => (
-    <LazyPicture src="https://picsum.photos/id/128/720/405" lazy={true} />
+    <Picture src="https://picsum.photos/id/128/720/405" lazy={true} />
   ))
   .add('lazy responsive image', () => (
-    <LazyPicture
+    <Picture
       src="https://picsum.photos/id/128/640/360"
       srcSet={srcset}
       lazy={true}
     />
   ))
   .add('picture', () => (
-    <LazyPicture src="https://picsum.photos/id/128/640/360" sources={sources} />
+    <Picture src="https://picsum.photos/id/128/640/360" sources={sources} />
   ))
   .add('lazy picture', () => (
-    <LazyPicture
+    <Picture
       src="https://picsum.photos/id/128/640/360"
       sources={sources}
       lazy={true}
     />
   ))
   .add('lazy picture with lqip', () => (
-    <LazyPicture
+    <Picture
       src="https://picsum.photos/id/128/640/360"
       sources={sources}
       lazy={true}
