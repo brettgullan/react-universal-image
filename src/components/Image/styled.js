@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import system from '@rebass/components'
+import { position, size } from 'polished'
 
 // ----------------------------------------------------------------------------
 
@@ -38,13 +39,8 @@ export const Img = system({
 // ----------------------------------------------------------------------------
 
 export const fitImage = css`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
+  ${position('absolute', 0)}
+  ${size('100%')}
   max-width: auto;
   object-fit: cover;
   font-family: 'object-fit: cover;'; /* for object fit polyfill */
