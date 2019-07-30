@@ -8,6 +8,7 @@ import Picture from '../src/components/Picture'
 
 import { Box } from '../src/theme/styled'
 import { fitImage } from '../src/components/Image/styled'
+import { scrim, NH40 } from '../src/components/scrims'
 
 //-----------------------------------------------------------------------------
 
@@ -145,3 +146,44 @@ storiesOf('Picture', module)
       placeholder="https://picsum.photos/id/1015/32/18"
     />
   ))
+
+storiesOf('Scrims', module)
+  .add('lazy picture with default scrim', () => (
+    <Box css={scrim}>
+      <Picture
+        src="https://picsum.photos/id/1015/640/360"
+        sources={sources}
+        lazy={true}
+      />
+    </Box>
+  ))
+  .add('lazy picture with inset scrim specified as element prop', () => (
+    <Box css={scrim} inset={'40px'}>
+      <Picture
+        src="https://picsum.photos/id/1015/640/360"
+        sources={sources}
+        lazy={true}
+      />
+    </Box>
+  ))
+  .add('lazy picture with custom inset scrim', () => (
+    <Box css={scrim({ inset: '15% 20px' })}>
+      <Picture
+        src="https://picsum.photos/id/1015/640/360"
+        sources={sources}
+        lazy={true}
+      />
+    </Box>
+  ))
+  .add('lazy picture with custom background scrim', () => {
+    return (
+      <Box css={scrim({ background: NH40 })} overflow={'hidden'}>
+        <Picture
+          src="https://picsum.photos/id/1015/640/360"
+          sources={sources}
+          lazy={true}
+          placeholder="https://picsum.photos/id/1015/64/36"
+        />
+      </Box>
+    )
+  })
