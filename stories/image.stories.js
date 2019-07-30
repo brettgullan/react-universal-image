@@ -21,25 +21,28 @@ const srcset = [
 const sources = [
   {
     srcSet: [
-      'https://picsum.photos/id/128/240/240 240w',
-      'https://picsum.photos/id/128/320/320 320w',
-      'https://picsum.photos/id/128/375/375 375w',
-      'https://picsum.photos/id/128/414/414 414w',
+      'https://picsum.photos/id/1015/240/240 240w',
+      'https://picsum.photos/id/1015/320/320 320w',
+      'https://picsum.photos/id/1015/375/375 375w',
+      'https://picsum.photos/id/1015/414/414 414w',
+      'https://picsum.photos/id/1015/576/576 576w',
+      'https://picsum.photos/id/1015/640/640 640w',
+      'https://picsum.photos/id/1015/1152/1152 1152w',
     ].join(','),
     media: '(max-width: 576px)',
   },
   {
     srcSet: [
-      'https://picsum.photos/id/128/640/480 640w',
-      'https://picsum.photos/id/128/768/576 768w',
-      'https://picsum.photos/id/128/1152/864 1152w',
+      'https://picsum.photos/id/1015/640/480 640w',
+      'https://picsum.photos/id/1015/768/576 768w',
+      'https://picsum.photos/id/1015/1152/864 1152w',
     ].join(','),
     media: '(max-width: 768px)',
   },
   {
     srcSet: [
-      'https://picsum.photos/id/128/1280/720 1280w',
-      'https://picsum.photos/id/128/1600/900 1600w',
+      'https://picsum.photos/id/1015/1280/720 1280w',
+      'https://picsum.photos/id/1015/1600/900 1600w',
     ].join(','),
     media: '(min-width: 768px)',
   },
@@ -104,10 +107,10 @@ storiesOf('Image', module)
 
 storiesOf('Picture', module)
   .add('simple image', () => (
-    <Picture src="https://picsum.photos/id/128/720/405" />
+    <Picture src="https://picsum.photos/id/1015/720/405" />
   ))
   .add('lazy image', () => (
-    <Picture src="https://picsum.photos/id/128/720/405" lazy={true} />
+    <Picture src="https://picsum.photos/id/1015/720/405" lazy={true} />
   ))
   .add('lazy responsive image', () => (
     <Picture
@@ -116,21 +119,29 @@ storiesOf('Picture', module)
       lazy={true}
     />
   ))
+  .add('lazy responsive image with lqip', () => (
+    <Picture
+      src="https://picsum.photos/id/128/640/360"
+      srcSet={srcset}
+      lazy={true}
+      placeholder="https://picsum.photos/id/128/64/36"
+    />
+  ))
   .add('picture', () => (
-    <Picture src="https://picsum.photos/id/128/640/360" sources={sources} />
+    <Picture src="https://picsum.photos/id/1015/640/360" sources={sources} />
   ))
   .add('lazy picture', () => (
     <Picture
-      src="https://picsum.photos/id/128/640/360"
+      src="https://picsum.photos/id/1015/640/360"
       sources={sources}
       lazy={true}
     />
   ))
   .add('lazy picture with lqip', () => (
     <Picture
-      src="https://picsum.photos/id/128/640/360"
+      src="https://picsum.photos/id/1015/640/360"
       sources={sources}
       lazy={true}
-      placeholder="https://picsum.photos/id/128/32/18"
+      placeholder="https://picsum.photos/id/1015/32/18"
     />
   ))
