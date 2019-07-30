@@ -28,6 +28,7 @@
     "@rebass/components": "^4.0.0-1",
     "classnames": "^2.2.6",
     "lazysizes": "^5.1.0",
+    "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "ramda": "^0.26.1",
     "ramda-adjunct": "^2.18.0",
