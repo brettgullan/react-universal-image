@@ -40,7 +40,7 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@neutrinojs/jest": "^8.3.0",
-    "@neutrinojs/react-components": "^8.3.0",
+    "@neutrinojs/react-components": "^9.5.0",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-backgrounds": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
